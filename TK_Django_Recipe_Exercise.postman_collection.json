@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "07b11f00-83ca-444a-989b-19239c4252b2",
+		"name": "TK Django Recipe Exercise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Recipe",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Beans on Toast\",\n    \"description\": \"Plain and simple Beans on Toast.\",\n    \"ingredients\": [\n        {\n            \"name\": \"Baked Beans\"\n        },\n        {\n            \"name\": \"Toast\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/recipe/recipes/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"recipe",
+						"recipes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Recipes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/recipe/recipes/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"recipe",
+						"recipes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Recipes - Filter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/recipe/recipes?name=Pizza",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"recipe",
+						"recipes"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Pizza"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Recipe - Partial",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Pizza\",\n    \"description\": \"Just put it in the oven.\",\n    \"ingredients\": [\n        {\n            \"name\": \"Cheese\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/recipe/recipes/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"recipe",
+						"recipes",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Recipe - Full",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Pizza\",\n    \"description\": \"Put it in the oven for 20 minutes.\",\n    \"ingredients\": [\n        {\n            \"name\": \"Cheese\"\n        },\n        {\n            \"name\": \"Dough\"\n        },\n        {\n            \"name\": \"Tomato\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/recipe/recipes/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"recipe",
+						"recipes",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Recipe",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/recipe/recipes/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"recipe",
+						"recipes",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
